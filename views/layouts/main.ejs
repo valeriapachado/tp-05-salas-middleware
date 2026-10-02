@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= titulo %></title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Sistema de Reservas - Salas de Estudio</h1>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/reservas">Ver Reservas</a>
+      <a href="/reservas/nueva">Nueva Reserva</a>
+      <a href="/estado">Estado Servidor</a>
+    </nav>
+  </header>
+  <main>
+    <% if (locals.seccion) { %>
+      <p style="color: #64748b; font-weight: bold; margin-bottom: 1rem;"><%= seccion %></p>
+    <% } %>
+
+    <%- body %>
+  </main>
+  <footer>
+    <p>&copy; 2026 Reservas de Salas de Estudio. Todos los derechos reservados.</p>
+    <p><small>Solicitud ID: <strong><%= locals.solicitudId %></strong></small></p>
+  </footer>
+</body>
+</html>
